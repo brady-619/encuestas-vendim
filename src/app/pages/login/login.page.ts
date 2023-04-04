@@ -32,7 +32,10 @@ export class LoginPage implements OnInit {
 
 
   async inicio() {
-    console.log('click');
+
+    const params = this.loginForm.value;
+    console.log('click',params);
+
 
   
   }
