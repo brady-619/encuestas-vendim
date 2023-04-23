@@ -21,13 +21,13 @@
         <ion-list>
           <ion-item>
             <ion-select [(ngModel)]="pregunta1" aria-label="fruit" placeholder="Selecciona una opcion">
-              <ion-select-option value="3"
+              <ion-select-option value="Muy Satisfecho"
                 >Muy Satisfecho</ion-select-option
               >
-              <ion-select-option value="2"
+              <ion-select-option value="Satisfecho"
                 >Satisfecho</ion-select-option
               >
-              <ion-select-option value="1"
+              <ion-select-option value="Muy Insatisfecho"
                 >Muy Insatisfecho</ion-select-option
               >
             </ion-select>
@@ -39,10 +39,7 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col *ngIf="pregunta1>=1" size="6">
-        <ion-button (click)="siguiente()" expand="block" shape="round">
-          Siguiente
-        </ion-button></ion-col>
+     
 
       <!-- <ion-col size="6">
         <ion-button (click)="siguiente()" expand="block" shape="round">
@@ -63,6 +60,15 @@
           Atras
         </ion-button></ion-col
       >
+
+
+
+      <ion-col *ngIf="pregunta1" size="6">
+        <ion-button (click)="siguiente(pregunta1)" expand="block" shape="round">
+          Siguiente
+        </ion-button></ion-col>
+
+
     </ion-row>
   </ion-grid>
 </ion-content>

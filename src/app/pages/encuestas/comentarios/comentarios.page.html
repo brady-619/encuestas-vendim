@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"
+      >Comentarios adicionales</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="8">
+        <ion-card>
+          <ion-card-content>
+
+            <ion-input [(ngModel)]="nombre"  label="Nombre (opcional)" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+            <br>
+
+            <ion-input [(ngModel)]="direccion"  label="Direccion (obligatorio)" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+
+            <br>
+
+
+            <ion-textarea [(ngModel)]="comentarios" label="Comentarios" labelPlacement="floating" fill="outline" placeholder="Enter text"></ion-textarea>
+    
+            
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed>
+    <ion-row>
+     
+
+
+
+
+
+
+      <ion-col size="6">
+        <ion-button
+          [disabled]="true"
+          (click)="atras()"
+          expand="block"
+          shape="round"
+        >
+          Atras
+        </ion-button></ion-col
+      >
+
+
+
+      <ion-col *ngIf="comentarios && direccion.length>=2" size="6">
+        <ion-button (click)="siguiente(comentarios, nombre, direccion)" expand="block" shape="round">
+          Siguiente
+        </ion-button></ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

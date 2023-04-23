@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pregunta2',
@@ -12,9 +13,36 @@ import { IonicModule } from '@ionic/angular';
 })
 export class Pregunta2Page implements OnInit {
 
-  constructor() { }
+
+  pregunta2:any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    localStorage.removeItem("2")
+
+
+  }
+
+
+  siguiente(pregunta2:any){
+    console.log("sig", pregunta2);
+    
+localStorage.setItem("2",pregunta2 )  
+  
+    this.router.navigate(['/pregunta3']);
+  }
+
+
+  atras(){
+    console.log("atras");
+
+    this.router.navigate(['/pregunta1']);
+    
+
   }
 
 }

@@ -38,4 +38,8 @@ export const routes: Routes = [
     path: 'pregunta6',
     loadComponent: () => import('./pages/encuestas/pregunta6/pregunta6.page').then( m => m.Pregunta6Page)
   },
+  {
+    path: 'comentarios',
+    loadComponent: () => import('./pages/encuestas/comentarios/comentarios.page').then( m => m.ComentariosPage)
+  },
 ];
